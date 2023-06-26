@@ -7,6 +7,10 @@ function* fetchHajj(){
     try{
         const hajjTable = yield axios.get('api/haji')
         console.log('This is the information coming from server GET', hajjTable.data)
+        yield put({
+            type: 'SET_HAJI_TABLE',
+            payload: hajjTable.data
+        })
     } catch(err){
         console.log('Error with GET request ClientSide', err)
     }

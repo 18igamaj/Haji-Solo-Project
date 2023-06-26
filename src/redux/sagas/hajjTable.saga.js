@@ -15,3 +15,9 @@ function* fetchHajj(){
         console.log('Error with GET request ClientSide', err)
     }
 }
+
+function* hajiFetch() {
+    yield takeLatest('FETCH_HAJI', fetchHajj) 
+}
+
+export default hajiFetch

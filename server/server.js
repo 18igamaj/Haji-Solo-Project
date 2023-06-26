@@ -9,6 +9,8 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+// Route for Haji 
+const hajiRouter = require('./routes/haji.router');
 
 // Body parser middleware
 app.use(bodyParser.json());

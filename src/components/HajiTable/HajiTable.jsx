@@ -5,6 +5,11 @@ function HajiTable() {
 
     const dispatch = useDispatch()
     const hajiTable = useSelector(store => store.haji)
+    useEffect( () => {
+        dispatch({
+            type: 'FETCH_HAJI'
+        });
+    }, [])
     return (
         <p>Under Construction Progress Page</p>
     )

@@ -1,5 +1,6 @@
 import React,{useEffect, useReact} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import HajiTableItem from '../HajiTableItem/HajiTableItem'
 
 function HajiTable() {
 
@@ -11,8 +12,12 @@ function HajiTable() {
         });
     }, [])
     return (
-        <p>Under Construction Progress Page</p>
-    )
+        <div>
+            {hajiTable && hajiTable.map((item,) => (
+                 <HajiTableItem key={item.id} item={item} />
+            ))}
+     
+    </div>)
 }
 
 export default HajiTable

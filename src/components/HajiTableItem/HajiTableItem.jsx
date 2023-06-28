@@ -1,9 +1,11 @@
 
-function HajiTableItem(){
+function HajiTableItem({item}){
 
     return (
-        <p>
-            Under Construction
-        </p>
+        <table>
+            
+        </table>
     )
 }
+
+export default HajiTableItem

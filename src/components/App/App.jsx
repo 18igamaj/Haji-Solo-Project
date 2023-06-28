@@ -68,6 +68,7 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+          {/* Protected route for Haji Table Component where the user will create budget */}
           <ProtectedRoute 
           exact
           path="/budget" >

@@ -8,7 +8,14 @@ import React from 'react';
 function InfoPage() {
   return (
     <div className="container">
-      <p>Info Page</p>
+      <h2>AVERAGE COST OF EXPENSES</h2>
+      <ul>
+      Two week stay in Mecca:
+        <li>Flights Avg : $500 to $1500</li>
+        <li>Transportation: $50 to $200</li>
+        <li>Hotel/Lodge: $300 to $800</li>
+        <li>Total Cost: $900 to $2500</li>
+      </ul>
     </div>
   );
 }

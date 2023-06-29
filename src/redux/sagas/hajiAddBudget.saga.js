@@ -1,5 +1,6 @@
+const { takeLatest } = require("redux-saga/effects")
 
-function* AddBudget(action){
+function* addBudget(action){
  
 
     try{
@@ -13,3 +14,8 @@ function* AddBudget(action){
     }
 }
 
+function* addBudgetSaga() {
+    yield takeLatest('ADD_BUDGET', addBudget)
+}
+
+export default addBudgetSaga

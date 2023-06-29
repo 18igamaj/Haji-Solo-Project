@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HajiTable from '../HajiTable/HajiTable';
+import HajiForm from '../HajiForm/HajiForm'
 
 import './App.css';
 
@@ -72,6 +73,7 @@ function App() {
           <ProtectedRoute 
           exact
           path="/budget" >
+            <HajiForm />
             <HajiTable />
           </ProtectedRoute>
 

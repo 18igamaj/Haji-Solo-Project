@@ -21,7 +21,7 @@ function HajiTableItem({item}){
                 </tr>
             </tbody>
         </table>
-        // <p>Hey</p>
+    
     )
 }
 

@@ -16,9 +16,9 @@ function HajiTable() {
     return (
         <div>
      
-            {hajiTable && hajiTable.map((item, i) => {
-               return  <HajiTableItem key={i} item={item} />
-            })}
+            { hajiTable && hajiTable.map((item, i) => (
+               <HajiTableItem key={i} item={item} />
+            ))}
      
     </div>
     )

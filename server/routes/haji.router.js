@@ -24,6 +24,20 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
+  let dataToInsert = req.body
+  console.log('What is our req.body', dataToInsert)
+  let sqlText = `INSERT INTO "hajj" ("name", "category_budget","amount_saved")
+  VALUES ($1,$2,$3);`
+
+  pool.query(sqlText,[dataToInsert.name,dataToInsert.category_budget,
+    dataToInsert.amount_saved])
+    .then(result => {
+      res.sendStatus(201)
+    })
+    .catch(err => {
+      console.log('Error SERVER POST===>', err)
+      res.sendStatus(500)
+    })
 });
 
 module.exports = router;

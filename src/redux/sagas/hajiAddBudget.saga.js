@@ -5,13 +5,13 @@ function* addBudget(action){
  
 
     try{
-           console.log('POST action.payload ===>',action.payload)
+           console.log(' Budget POST action.payload ===>',action.payload)
         yield axios.post('/api/haji', action.payload)
         yield put({
             type: 'FETCH_HAJI'
         })
     }catch(err){
-        console.log('There is an error with Client POST', err)
+        console.log('There is an error with Client BUDGET POST', err)
     }
 }
 

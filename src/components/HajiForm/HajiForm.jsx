@@ -3,8 +3,15 @@ import {useDispatch} from 'react-redux'
 
 function HajiForm(){
 
+    let [name, setName] = useState('')
+    let [budgetAmount, setBudget] = useState(0)
+    let [saved, setSaved] = useState(0)
+
     return (
-        <h5>Construction Zone:This is Where you INPUT </h5>
+        <form>
+
+        </form>
+    
     )
 }
 

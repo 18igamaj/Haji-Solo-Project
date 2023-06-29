@@ -7,7 +7,7 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   // GET route code for to pull data from haji_database
-  pool.query(`SELECT * FROM "hajj"`)
+  pool.query(`SELECT * FROM "hajj";`)
 
   .then(result => {
     console.log('Whats coming from database?', result.rows)

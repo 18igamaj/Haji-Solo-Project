@@ -5,19 +5,23 @@ import HajiTableItem from '../HajiTableItem/HajiTableItem'
 function HajiTable() {
 
     const dispatch = useDispatch()
-    const hajiTable = useSelector(store => store.haji)
+    const hajiTable = useSelector(store => store.hajj)
     useEffect( () => {
         dispatch({
             type: 'FETCH_HAJI'
         });
     }, [])
+
+
     return (
         <div>
-            {hajiTable && hajiTable.map((item,) => (
-                 <HajiTableItem key={item.id} item={item} />
-            ))}
      
-    </div>)
+            {hajiTable && hajiTable.map((item, i) => {
+               return  <HajiTableItem key={i} item={item} />
+            })}
+     
+    </div>
+    )
 }
 
 export default HajiTable

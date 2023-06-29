@@ -31,11 +31,12 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
-            
+
             <Link className="navLink" to="/budget">
               Budget
               
             </Link>
+            
 
             <LogOutButton className="navLink" />
           </>

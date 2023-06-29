@@ -24,13 +24,14 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
-  let dataToInsert = req.body
-  console.log('What is our req.body', dataToInsert)
-  let sqlText = `INSERT INTO "hajj" ("name", "category_budget","amount_saved")
-  VALUES ($1,$2,$3);`
+  // let dataToInsert = req.body
+  let sqlText = `INSERT INTO hajj ("name" ,"category_budget", "amount_saved")
+  VALUES ($1, $2, $3);`;
 
-  pool.query(sqlText,[dataToInsert.name,dataToInsert.category_budget,
-    dataToInsert.amount_saved])
+  
+  pool.query(sqlText, [req.body.name, req.body.category_budget,
+    req.body.amount_saved])
+    // console.log('What is our req.body', dataToInsert)
     .then(result => {
       res.sendStatus(201)
     })

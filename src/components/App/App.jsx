@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import HajiTable from '../HajiTable/HajiTable';
 
 import './App.css';
 
@@ -66,6 +67,12 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+          {/* Protected route for Haji Table Component where the user will create budget */}
+          <ProtectedRoute 
+          exact
+          path="/budget" >
+            <HajiTable />
           </ProtectedRoute>
 
           <Route

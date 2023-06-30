@@ -18,17 +18,18 @@ function HajiTable() {
             <thead>
                 <tr>
                     <th>Budget Name</th> 
-                    <th>Budget Goal</th> <br></br>
-                    <th>Amount Saved</th> <br></br>
+                    <th>Budget Goal</th> 
+                    <th>Amount Saved</th> 
                     {/* <th>Category</th> */}
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
-            
+            <tbody >
             { hajiTable && hajiTable.map((item, i) => (
-               <HajiTableItem key={i} item={item} />
+            <tr>   <HajiTableItem key={i} item={item} /> </tr>
             ))}
+              </tbody>
  </table>
     )
 }

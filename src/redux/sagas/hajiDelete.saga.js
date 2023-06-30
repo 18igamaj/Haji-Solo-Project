@@ -4,7 +4,7 @@ import {put, takeLatest} from 'redux-saga/effects';
 function* deleteTableItem(action){
     try{
 
-        yield axios.delete(`/api/haji/${action.payload.id}`)
+        yield axios.delete(`/api/haji/${action.payload}`)
         yield put({
             type: 'FETCH_HAJI'
         });
@@ -14,7 +14,7 @@ function* deleteTableItem(action){
 }
 
 function* deleteSaga(){
-    yield takeLatest('DELETE_ITEM', deleteSaga)
+    yield takeLatest('DELETE_ITEM', deleteTableItem)
 }
 
 export default deleteSaga

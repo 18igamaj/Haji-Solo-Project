@@ -7,6 +7,27 @@ function HajiForm(){
     let [budgetAmount, setBudget] = useState(0)
     let [saved, setSaved] = useState(0)
 
+    const handleAddSave = (event) => {
+        event.preventDefault();
+        dispatchEvent({
+            type: 'ADD_SAVE',
+            payload: saved
+        })
+
+        setSaved()
+
+    }
+    const handleCreateBudget = (event) => {
+        event.preventDefault();
+        dispatchEvent({
+            type: 'ADD_BUDGET',
+            payload: {name,category_budget:budgetAmount}
+        })
+
+        setSaved()
+
+    }
+
     return (
         <>
         <form>
@@ -22,6 +43,7 @@ function HajiForm(){
             placeholder='Goal'
             value={budgetAmount}
             onChange={(e) => setBudget(e.target.value)} />
+            <button onClick={(event) =>handleCreateBudget}>Create</button>
         </form>
 
         <form>
@@ -31,7 +53,7 @@ function HajiForm(){
         placeholder='Amount'
         value={saved}
         onChange={(e) => setSaved(e.target.value)} />
-        <button>Add</button>
+        <button onClick={(event) => handleAddSave}>Add</button>
         </form>
         </>
     )

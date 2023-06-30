@@ -12,3 +12,8 @@ function* deleteTableItem(action){
         console.log('DELETE ERROR ===>', err)
     }
 }
+
+function* deleteSaga(){
+    yield takeLatest('DELETE_ITEM', deleteSaga)
+}
+

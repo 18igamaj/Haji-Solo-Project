@@ -3,6 +3,8 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import hajjTableSaga from './hajjTable.saga'
+import hajiBudgetSaga from './hajiAddBudget.saga'
+import hajiSaveSaga from './hajiAddSaving.saga'
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -16,5 +18,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     hajjTableSaga(),
+    hajiBudgetSaga(),
+    hajiSaveSaga(),
   ]);
 }

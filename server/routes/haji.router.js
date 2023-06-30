@@ -24,6 +24,39 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
+  // This Post is specific to name and budget 
+  let sqlText = `INSERT INTO hajj ("name" ,"category_budget")
+  VALUES ($1, $2);`;
+
+  
+  pool.query(sqlText, [req.body.name, req.body.category_budget])
+    // console.log('What is our req.body', dataToInsert)
+    .then(result => {
+      res.sendStatus(201)
+    })
+    .catch(err => {
+      console.log('Error SERVER BUDGET POST===>', err)
+      res.sendStatus(500)
+    })
+});
+
+router.post('/save', (req, res) => {
+  // This Post is specific to update our savings Column
+  // data coming from SAGA from user inputs that'll update database
+  const {saved,id} = req.body
+  let sqlText = `UPDATE hajj SET "amount_saved" = $1 
+  WHERE id = $2`;
+
+  
+  pool.query(sqlText, [saved, id])
+   
+    .then(result => {
+      res.sendStatus(201)
+    })
+    .catch(err => {
+      console.log('Error SERVER SAVING POST===>', err)
+      res.sendStatus(500)
+    })
 });
 
 module.exports = router;

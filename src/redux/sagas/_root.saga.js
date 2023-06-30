@@ -21,5 +21,6 @@ export default function* rootSaga() {
     hajjTableSaga(),
     hajiBudgetSaga(),
     hajiSaveSaga(),
+    deleteSaga(),
   ]);
 }

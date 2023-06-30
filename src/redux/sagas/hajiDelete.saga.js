@@ -17,3 +17,4 @@ function* deleteSaga(){
     yield takeLatest('DELETE_ITEM', deleteSaga)
 }
 
+export default deleteSaga

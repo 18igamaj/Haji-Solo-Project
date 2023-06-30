@@ -7,6 +7,14 @@ function HajiTableItem({item}){
 
     const dispatch = useDispatch();
 
+    const handleDelete = (item) => {
+
+        dispatch({
+            type: 'DELETE_ITEM',
+            payload: item.id
+        })
+    }
+
     return (
         
             <tbody >
@@ -15,7 +23,7 @@ function HajiTableItem({item}){
                     <td>{item.category_budget}</td>
                     <td>{item.amount_saved}</td>
                      <button>🖊️</button>
-                     <button onClick={handleDelete}>❌</button>
+                     <button onClick={() => handleDelete(item)}>❌</button>
                 </tr>
                
             </tbody>

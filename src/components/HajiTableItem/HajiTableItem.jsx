@@ -1,7 +1,11 @@
+import { useDispatch } from "react-redux"
+
 
 function HajiTableItem({item}){
 
     console.log('WHATTTTTT IS THIS', item)
+
+    const dispatch = useDispatch();
 
     return (
         
@@ -11,7 +15,7 @@ function HajiTableItem({item}){
                     <td>{item.category_budget}</td>
                     <td>{item.amount_saved}</td>
                      <button>🖊️</button>
-                     <button>❌</button>
+                     <button onClick={handleDelete}>❌</button>
                 </tr>
                
             </tbody>

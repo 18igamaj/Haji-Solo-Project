@@ -16,5 +16,5 @@ CREATE TABLE "hajj" (
 	"name" VARCHAR (80) UNIQUE NOT NULL,
 	"category_budget" integer,
 	"user_id" INT REFERENCES "user",
-	"amount_saved" INTEGER NOT NULL
+	"amount_saved" INTEGER DEFAULT 0
 );

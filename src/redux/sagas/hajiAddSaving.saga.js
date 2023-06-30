@@ -5,7 +5,7 @@ import {put, takeLatest} from 'redux-saga/effects';
 function* addSaving(action){
     try{
         console.log('POST SAVING action.payload ===>', action.payload)
-        yield axios.post('/api/haji', action.payload)
+        yield axios.post('/api/haji/save', action.payload)
         yield put({
             type: 'FETCH_HAJI'
         })

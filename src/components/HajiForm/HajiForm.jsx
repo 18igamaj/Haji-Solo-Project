@@ -1,7 +1,11 @@
 import {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 function HajiForm(){
+
+    const dispatch = useDispatch()
+    const hajiTable = useSelector(store => store.hajj)
+
 
     let [name, setName] = useState('')
     let [budgetAmount, setBudget] = useState(0)
@@ -9,9 +13,9 @@ function HajiForm(){
 
     const handleAddSave = (event) => {
         event.preventDefault();
-        dispatchEvent({
+        dispatch({
             type: 'ADD_SAVE',
-            payload: saved
+            payload: {saved:saved, id: hajiTable[0].id }
         })
 
         setSaved()
@@ -19,13 +23,15 @@ function HajiForm(){
     }
     const handleCreateBudget = (event) => {
         event.preventDefault();
-        dispatchEvent({
+        console.log('We are in handle Create')
+        dispatch({
             type: 'ADD_BUDGET',
             payload: {name,category_budget:budgetAmount}
         })
 
-        setSaved()
-
+       
+        setBudget('')
+        setName('')
     }
 
     return (
@@ -43,7 +49,7 @@ function HajiForm(){
             placeholder='Goal'
             value={budgetAmount}
             onChange={(e) => setBudget(e.target.value)} />
-            <button onClick={(event) =>handleCreateBudget}>Create</button>
+            <button onClick={handleCreateBudget}>Create</button>
         </form>
 
         <form>
@@ -53,7 +59,7 @@ function HajiForm(){
         placeholder='Amount'
         value={saved}
         onChange={(e) => setSaved(e.target.value)} />
-        <button onClick={(event) => handleAddSave}>Add</button>
+        <button onClick={ handleAddSave}>Add</button>
         </form>
         </>
     )

@@ -14,13 +14,22 @@ function HajiTable() {
 
 
     return (
-        <div>
-     
+        <table>
+            <thead>
+                <tr>
+                    <th>Budget Name</th> 
+                    <th>Budget Goal</th> <br></br>
+                    <th>Amount Saved</th> <br></br>
+                    {/* <th>Category</th> */}
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            
             { hajiTable && hajiTable.map((item, i) => (
                <HajiTableItem key={i} item={item} />
             ))}
-     
-    </div>
+ </table>
     )
 }
 

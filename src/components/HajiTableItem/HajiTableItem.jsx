@@ -8,8 +8,8 @@ function HajiTableItem({item}){
     const dispatch = useDispatch();
 
     const [edit, setEdit] = useState(false)
-    let [saved, setSaved] = useState(item.amount_saved);
-    // let [total, setTotal] = useState(saved)
+    let [saved, setSaved] = useState('');
+    // let [total, setTotal] = useState(saved)item.amount_saved
 
     const handleAddSave = (event) => {
         event.preventDefault();
@@ -21,7 +21,7 @@ function HajiTableItem({item}){
         })
 
         setEdit(false);
-        // setSaved(0)
+        setSaved('')
 
     }
 

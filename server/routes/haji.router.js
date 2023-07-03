@@ -45,9 +45,11 @@ router.put('/save', (req, res) => {
   // This Post is specific to update our savings Column
   // data coming from SAGA from user inputs that'll update database
   const {saved,id} = req.body
-  let sqlText = `UPDATE hajj SET "amount_saved" = $1 
-  WHERE id = $2
-  `;
+  let sqlText = `UPDATE hajj
+  set "amount_saved" = "amount_saved" + $1
+   WHERE id = $2;`;
+
+ 
 
   
   pool.query(sqlText, [saved, id])

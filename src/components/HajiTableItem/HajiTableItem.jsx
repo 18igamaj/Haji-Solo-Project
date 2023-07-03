@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import {useState} from 'react'
 
-function HajiTableItem({item}){
+function HajiTableItem({item, formatter }){
 
     console.log('WHATTTTTT IS THIS', item)
 
@@ -40,7 +40,7 @@ function HajiTableItem({item}){
                     <td>{item.name}</td>
                     <td>{item.category_budget}</td>
                     {!edit ? (
-                         <td onClick={() => setEdit(true)}>{item.amount_saved}</td>
+                         <td onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</td>
                     ):(
                         <td> <form>
                         <label>Amount Saved</label>

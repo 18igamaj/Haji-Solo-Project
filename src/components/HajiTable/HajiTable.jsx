@@ -12,6 +12,11 @@ function HajiTable() {
         });
     }, [])
 
+    const formatter = new Intl.NumberFormat(undefined, {
+        style: 'currency',
+        currency: 'USD',
+
+    })
 
     return (
         <table>
@@ -27,7 +32,7 @@ function HajiTable() {
             </thead>
             <tbody >
             { hajiTable && hajiTable.map((item, i) => (
-            <tr>   <HajiTableItem key={i} item={item} /> </tr>
+            <tr>   <HajiTableItem key={i} item={item}  formatter= {formatter}/> </tr>
             ))}
               </tbody>
  </table>

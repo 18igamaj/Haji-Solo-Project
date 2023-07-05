@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Typography } from '@mui/material';
-
+import {formatter} from '../HelperFunctions'
 
 function Progress() {
     const dispatch = useDispatch()
@@ -20,12 +20,7 @@ function Progress() {
         totalSaved += item.amount_saved
     }
 
-  const formatPercentage = (amt) => {
-        return amt.toLocaleString(undefined, {
-            style: 'percent',
-            minimumFractionDigits: 0,
-        })
-    }
+  
 
     console.log(totalCategory, totalSaved)
   
@@ -36,14 +31,17 @@ function Progress() {
 
         <div>
 
-
+            Progress <br></br>
         <progress max={totalCategory} value={totalSaved}/>
+
         <Typography >
-            {formatPercentage(totalSaved / totalCategory )}
+        Saving: {formatter.format(totalSaved)}  Goal: {formatter.format(totalCategory)}
+            <br></br>
+            {formatPercentage(totalSaved / totalCategory )} GOAL REACHED
        </Typography>
 
              
-        saved ... {totalSaved}      Goal... {totalCategory}
+      
      
    </div> )
 }

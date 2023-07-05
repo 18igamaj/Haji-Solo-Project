@@ -36,7 +36,10 @@ function Nav() {
               Budget
               
             </Link>
-            
+            <Link className="navLink" to="/progress">
+              Progress
+              
+            </Link>
 
             <LogOutButton className="navLink" />
           </>

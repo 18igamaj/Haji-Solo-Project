@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux"
 import {useState} from 'react'
+import {formatter} from '../HelperFunctions'
 
-function HajiTableItem({item, formatter }){
+function HajiTableItem({item, }){
 
     console.log('WHATTTTTT IS THIS', item)
 
@@ -14,7 +15,7 @@ function HajiTableItem({item, formatter }){
     const handleAddSave = (event) => {
         event.preventDefault();
 
-        // setTotal(item.amount_saved + saved)
+        // setTotal(item.amount_saved + saved) formatter
         dispatch({
             type: 'ADD_SAVE',
             payload: {saved:saved, id:item.id }
@@ -38,7 +39,7 @@ function HajiTableItem({item, formatter }){
             // <tbody >
               <>
                     <td>{item.name}</td>
-                    <td>{item.category_budget}</td>
+                    <td>{formatter.format(item.category_budget)}</td>
                     {!edit ? (
                          <td onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</td>
                     ):(

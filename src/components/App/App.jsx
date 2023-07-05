@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HajiTable from '../HajiTable/HajiTable';
 import HajiForm from '../HajiForm/HajiForm'
+import Progress from '../Progress/Progress';
 
 import './App.css';
 
@@ -75,6 +76,13 @@ function App() {
           path="/budget" >
             <HajiForm />
             <HajiTable />
+          </ProtectedRoute>
+
+        {/* Progress component route */}
+          <ProtectedRoute 
+          exact
+          path="/progress" >
+          <Progress />
           </ProtectedRoute>
 
           <Route

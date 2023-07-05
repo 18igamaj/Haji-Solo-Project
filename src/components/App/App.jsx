@@ -77,6 +77,8 @@ function App() {
             <HajiForm />
             <HajiTable />
           </ProtectedRoute>
+
+        {/* Progress component route */}
           <ProtectedRoute 
           exact
           path="/progress" >

@@ -1,6 +1,7 @@
 import React,{useEffect, useReact} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import HajiTableItem from '../HajiTableItem/HajiTableItem'
+// import formatter from '../HelperFunctions'
 
 function HajiTable() {
 
@@ -12,11 +13,7 @@ function HajiTable() {
         });
     }, [])
 
-    const formatter = new Intl.NumberFormat(undefined, {
-        style: 'currency',
-        currency: 'USD',
-
-    })
+  
 
     return (
         <table>
@@ -25,14 +22,14 @@ function HajiTable() {
                     <th>Budget Name</th> 
                     <th>Budget Goal</th> 
                     <th>Amount Saved</th> 
-                    {/* <th>Category</th> */}
+                    {/* <th>Category</th> formatter= {formatter}*/}
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody >
             { hajiTable && hajiTable.map((item, i) => (
-            <tr>   <HajiTableItem key={i} item={item}  formatter= {formatter}/> </tr>
+            <tr>   <HajiTableItem key={i} item={item}  /> </tr>
             ))}
               </tbody>
  </table>

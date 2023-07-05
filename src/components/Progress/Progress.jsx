@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Typography } from '@mui/material';
-import {formatter} from '../HelperFunctions'
+import {formatter, formatPercentage} from '../HelperFunctions'
 
 function Progress() {
     const dispatch = useDispatch()

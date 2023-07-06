@@ -44,17 +44,15 @@ function HajiTable() {
         <Table>
             <TableHead>
                 <TableRow>
-                    <StyledTableCell>Budget Name</StyledTableCell> 
-                    <StyledTableCell>Budget Goal</StyledTableCell> 
-                    <StyledTableCell>Amount Saved</StyledTableCell> 
-                    {/* <th>Category</th> formatter= {formatter}*/}
-                    {/* <th>Edit</th> */}
-                    <StyledTableCell>Delete</StyledTableCell>
+                    <StyledTableCell align='center' >Budget Name</StyledTableCell> 
+                    <StyledTableCell align='center' >Budget Goal</StyledTableCell> 
+                    <StyledTableCell align='center' >Amount Saved</StyledTableCell> 
+                    <StyledTableCell align='center' >Delete</StyledTableCell>
                 </TableRow>
             </TableHead>
             <TableBody >
             { hajiTable && hajiTable.map((item, i) => (
-            <StyledTableRow>   <HajiTableItem key={i} item={item}  /> </StyledTableRow>
+            <StyledTableRow>   <HajiTableItem key={i} item={item} StyledTableCell={StyledTableCell} /> </StyledTableRow>
             ))}
               </TableBody>
  </Table>

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import {useState} from 'react'
 import {formatter} from '../HelperFunctions'
 
-function HajiTableItem({item, }){
+function HajiTableItem({item, Styled}){
 
     console.log('WHATTTTTT IS THIS', item)
 

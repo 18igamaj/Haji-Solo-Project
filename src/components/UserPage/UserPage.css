@@ -1,28 +1,18 @@
 video {
+    position: fixed ;
+    top: 0;
+    left: 0;
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     object-fit: cover;
-  }
-  .nav {
-    /* flex box layout */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    margin: 0 0 30px;
-    background-color: #00acb0;
-    overflow: hidden;
-  }
+    z-index: -1;
+}
 
-  .userText {
-    position: absolute ;
-    width: 100%;
-    height: 60%;
-    top: 0; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center; 
+.userText {
+    position: relative ;
+    background: rgba(0,0,0, 0.4); /* transparency is 0.4 */
+    padding: 20px 0;
+    text-align: center;
     font-weight: 700;
-    color: rgb(126, 241, 156);
-  }
+    color: rgb(4, 199, 56);
+}

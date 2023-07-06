@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import {useState} from 'react'
 import {formatter} from '../HelperFunctions'
 
-function HajiTableItem({item, Styled}){
+function HajiTableItem({item, StyledTableCell}){
 
     console.log('WHATTTTTT IS THIS', item)
 
@@ -38,12 +38,12 @@ function HajiTableItem({item, Styled}){
         
             // <tbody >
               <>
-                    <td>{item.name}</td>
-                    <td>{formatter.format(item.category_budget)}</td>
+                    <StyledTableCell>{item.name}</StyledTableCell>
+                    <StyledTableCell>{formatter.format(item.category_budget)}</StyledTableCell>
                     {!edit ? (
-                         <td onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</td>
+                         <StyledTableCell onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
                     ):(
-                        <td> <form>
+                        <StyledTableCell> <form>
                         <label>Amount Saved</label>
                         <input 
                         type='number'
@@ -52,10 +52,10 @@ function HajiTableItem({item, Styled}){
                         onChange={(e) => setSaved(e.target.value)} />
                         <button onClick={ handleAddSave}>Add</button>
                         </form>
-                        </td>
+                        </StyledTableCell>
                     )} 
                    
-                     <button>🖊️</button>
+                  
                      <button onClick={() => handleDelete(item.id)}>❌</button>
                
                

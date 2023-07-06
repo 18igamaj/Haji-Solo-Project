@@ -3,17 +3,19 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import videoFx from '../asset/VectTwo.mp4'
 import './UserPage.css'
-import { Container } from '@mui/material';
+// import { Container } from '@mui/material';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   return (
-    <Container >
+    <div className="overlay">
+    <div className="container">
       <div>
       <video src={videoFx} autoPlay muted loop />
-     {/* </video> className="container"*/}
+     {/* </video> */}
      </div>
+
      <div className='userText'>
       <h2>WELCOME TO HAJI 🕋! {user.username}!!! </h2>
       <h4> Haji Phase #1 </h4>
@@ -23,7 +25,8 @@ function UserPage() {
       </div>
       <LogOutButton className="btn" /> 
        
-    </Container>
+    </div>
+    </div>
   );
 }
 

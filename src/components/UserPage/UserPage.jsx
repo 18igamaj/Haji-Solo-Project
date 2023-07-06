@@ -17,11 +17,10 @@ function UserPage() {
      </div>
 
      <div className='userText'>
-      <h2>WELCOME TO HAJI 🕋! {user.username}!!! </h2>
-      <h4> Haji Phase #1 </h4>
-      <h4> Is a savings app that allows us in helping you with save for Pilgrimage </h4>
+      <h2>WELCOME TO HAJI 🕋 {user.username} </h2>
+      <br></br>
       <h4> Let's start your journey to go to Mecca</h4>
-      <p>Your ID is: {user.id}</p>
+      <p>Your ID is: {user.id}</p><p> Haji Phase #1 </p>
       </div>
       <LogOutButton className="btn" /> 
        

@@ -56,7 +56,7 @@ function HajiTableItem({item, StyledTableCell}){
                     )} 
                    
                   
-                     <button onClick={() => handleDelete(item.id)}>❌</button>
+                    <StyledTableCell> <button onClick={() => handleDelete(item.id)}>❌</button></StyledTableCell>
                
                
           </>

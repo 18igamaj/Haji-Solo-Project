@@ -32,7 +32,7 @@ function Progress() {
         <div className='progress'>
 
             Progress <br></br>
-        <progress max={totalCategory} value={totalSaved}/>
+        <progress className='progress-bar' max={totalCategory} value={totalSaved}/>
 
         <Typography >
         Saving: {formatter.format(totalSaved)}  Goal: {formatter.format(totalCategory)}

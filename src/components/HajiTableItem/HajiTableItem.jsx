@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import {useState} from 'react'
 import {formatter} from '../HelperFunctions'
 
-function HajiTableItem({item, }){
+function HajiTableItem({item, StyledTableCell}){
 
     console.log('WHATTTTTT IS THIS', item)
 
@@ -38,12 +38,12 @@ function HajiTableItem({item, }){
         
             // <tbody >
               <>
-                    <td>{item.name}</td>
-                    <td>{formatter.format(item.category_budget)}</td>
+                    <StyledTableCell align='center'>{item.name}</StyledTableCell>
+                    <StyledTableCell align='center'>{formatter.format(item.category_budget)}</StyledTableCell>
                     {!edit ? (
-                         <td onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</td>
+                         <StyledTableCell  className="hover-item" style={{cursor: 'pointer'}} align='center' onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
                     ):(
-                        <td> <form>
+                        <StyledTableCell align='center'> <form>
                         <label>Amount Saved</label>
                         <input 
                         type='number'
@@ -52,11 +52,11 @@ function HajiTableItem({item, }){
                         onChange={(e) => setSaved(e.target.value)} />
                         <button onClick={ handleAddSave}>Add</button>
                         </form>
-                        </td>
+                        </StyledTableCell>
                     )} 
                    
-                     <button>🖊️</button>
-                     <button onClick={() => handleDelete(item.id)}>❌</button>
+                  
+                    <StyledTableCell align='center'> <button onClick={() => handleDelete(item.id)}>❌</button></StyledTableCell>
                
                
           </>

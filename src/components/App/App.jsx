@@ -22,7 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HajiTable from '../HajiTable/HajiTable';
 import HajiForm from '../HajiForm/HajiForm'
 import Progress from '../Progress/Progress';
-
+import { ThemeProvider } from '@mui/material/styles';
+import {theme} from '../HelperFunctions'
 import './App.css';
 
 function App() {
@@ -43,13 +44,13 @@ function App() {
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
-          <Route
+          {/* <Route
             // shows AboutPage at all times (logged in or not)
             exact
             path="/about"
           >
             <AboutPage />
-          </Route>
+          </Route> */}
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -60,7 +61,9 @@ function App() {
             exact
             path="/user"
           >
+         
             <UserPage />
+         
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -68,14 +71,19 @@ function App() {
             exact
             path="/info"
           >
+         
             <InfoPage />
+           
           </ProtectedRoute>
           {/* Protected route for Haji Table Component where the user will create budget */}
+          
           <ProtectedRoute 
           exact
           path="/budget" >
+       
             <HajiForm />
             <HajiTable />
+            
           </ProtectedRoute>
 
         {/* Progress component route */}

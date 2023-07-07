@@ -1,7 +1,12 @@
 import React,{useEffect, useReact} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import HajiTableItem from '../HajiTableItem/HajiTableItem'
-// import formatter from '../HelperFunctions'
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 function HajiTable() {
 
@@ -13,26 +18,42 @@ function HajiTable() {
         });
     }, [])
 
-  
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+          fontSize: 14,
+        },
+      }));
+      
+      const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          border: 0,
+        },
+      }));
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Budget Name</th> 
-                    <th>Budget Goal</th> 
-                    <th>Amount Saved</th> 
-                    {/* <th>Category</th> formatter= {formatter}*/}
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody >
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <StyledTableCell align='center' >Budget Name</StyledTableCell> 
+                    <StyledTableCell align='center' >Budget Goal</StyledTableCell> 
+                    <StyledTableCell align='center' >Amount Saved</StyledTableCell> 
+                    <StyledTableCell align='center' >Delete</StyledTableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody >
             { hajiTable && hajiTable.map((item, i) => (
-            <tr>   <HajiTableItem key={i} item={item}  /> </tr>
+            <StyledTableRow>   <HajiTableItem key={i} item={item} StyledTableCell={StyledTableCell} /> </StyledTableRow>
             ))}
-              </tbody>
- </table>
+              </TableBody>
+ </Table>
     )
 }
 

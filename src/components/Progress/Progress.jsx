@@ -29,7 +29,7 @@ function Progress() {
     return (
     
 
-        <div>
+        <div className='progress'>
 
             Progress <br></br>
         <progress max={totalCategory} value={totalSaved}/>

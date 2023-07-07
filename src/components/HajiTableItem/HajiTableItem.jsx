@@ -41,7 +41,7 @@ function HajiTableItem({item, StyledTableCell}){
                     <StyledTableCell align='center'>{item.name}</StyledTableCell>
                     <StyledTableCell align='center'>{formatter.format(item.category_budget)}</StyledTableCell>
                     {!edit ? (
-                         <StyledTableCell align='center' onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
+                         <StyledTableCell  className="hover-item" style={{cursor: 'pointer'}} align='center' onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
                     ):(
                         <StyledTableCell align='center'> <form>
                         <label>Amount Saved</label>

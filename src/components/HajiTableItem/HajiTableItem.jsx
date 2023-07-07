@@ -38,12 +38,12 @@ function HajiTableItem({item, StyledTableCell}){
         
             // <tbody >
               <>
-                    <StyledTableCell>{item.name}</StyledTableCell>
-                    <StyledTableCell>{formatter.format(item.category_budget)}</StyledTableCell>
+                    <StyledTableCell align='center'>{item.name}</StyledTableCell>
+                    <StyledTableCell align='center'>{formatter.format(item.category_budget)}</StyledTableCell>
                     {!edit ? (
-                         <StyledTableCell onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
+                         <StyledTableCell align='center' onClick={() => setEdit(true)}>{formatter.format(item.amount_saved)}</StyledTableCell>
                     ):(
-                        <StyledTableCell> <form>
+                        <StyledTableCell align='center'> <form>
                         <label>Amount Saved</label>
                         <input 
                         type='number'
@@ -56,7 +56,7 @@ function HajiTableItem({item, StyledTableCell}){
                     )} 
                    
                   
-                    <StyledTableCell> <button onClick={() => handleDelete(item.id)}>❌</button></StyledTableCell>
+                    <StyledTableCell align='center'> <button onClick={() => handleDelete(item.id)}>❌</button></StyledTableCell>
                
                
           </>

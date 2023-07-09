@@ -20,7 +20,7 @@ function UserPage() {
       <h2>WELCOME TO HAJI 🕋 {user.username} </h2>
       <br></br>
       <h4> Let's start your journey to go to Mecca</h4>
-      <p>Your ID is: {user.id}</p><p> Haji Phase #1 </p>
+      <p> Haji Phase #1 </p>
       </div>
       <LogOutButton className="btn" /> 
        

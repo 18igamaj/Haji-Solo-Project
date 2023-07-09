@@ -2,10 +2,13 @@ import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Typography } from '@mui/material';
 import {formatter, formatPercentage} from '../HelperFunctions'
+import { useHistory } from 'react-router-dom'
+import {Button} from '@mui/material'
 
 function Progress() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const haji = useSelector(store => store.hajj)
+  const history = useHistory()
     
     useEffect(() => {
         dispatch({
@@ -13,6 +16,10 @@ function Progress() {
         });
     }, [])
 
+    const goBudget = () => {
+        history.push('/budget')
+    }
+ 
     let totalCategory = 0
     let totalSaved = 0
     for( let item of haji){
@@ -28,7 +35,7 @@ function Progress() {
     // console.log(haji.category_budget);
     return (
     
-
+        <>
         <div className='progress'>
 
             Progress <br></br>
@@ -41,11 +48,12 @@ function Progress() {
             <br></br>
            <b> {formatPercentage(totalSaved / totalCategory )} OF GOAL REACHED</b>
        </Typography>
+        </div> 
 
-             
-      
+        <Button className='progress-btn' onClick={goBudget}>Budget</Button>
+      </>
      
-   </div> )
+   )
 }
 
 export default Progress

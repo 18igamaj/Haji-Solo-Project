@@ -7,21 +7,20 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import './InfoPage.jsx'
+import { useHistory } from 'react-router-dom';
+import {Button} from '@mui/material'
 // This is one of our simplest components
 // It doesn't have local state
 // It doesn't dispatch any redux actions or display any part of redux state
-// // or even care what the redux state is   
-//       <h2>AVERAGE COST OF EXPENSES</h2>
-//       <ul>
-//       Two week stay in Mecca:
-//         <li>Flights Avg : $500 to $1500</li> +
-//         <li>Transportation: $50 to $200</li>
-//         <li>Hotel/Lodge: $300 to $800</li>
-//         <li>Total Cost: $900 to $2500</li>
-//       </ul>
-//     </div>
+
 
 function InfoPage() {
+const history = useHistory()
+  const goBudget = () => {
+    history.push('/budget')
+}
+
+
   return (
 
     
@@ -115,6 +114,12 @@ function InfoPage() {
         />
       </ListItem>
     </List>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Button sx={{ color:'white', backgroundColor: 'green',   '&:hover': {
+      backgroundColor: '#008183',
+    } }} 
+         onClick={goBudget}> Create Budget</Button>
+     </div>   
     </div>
   );
   

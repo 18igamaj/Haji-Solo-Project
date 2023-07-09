@@ -2,10 +2,13 @@ import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Typography } from '@mui/material';
 import {formatter, formatPercentage} from '../HelperFunctions'
+import { useHistory } from 'react-router-dom'
+import {Button} from '@mui/material'
 
 function Progress() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const haji = useSelector(store => store.hajj)
+  const history = useHistory()
     
     useEffect(() => {
         dispatch({
@@ -13,6 +16,10 @@ function Progress() {
         });
     }, [])
 
+    const goBudget = () => {
+        history.push('/budget')
+    }
+ 
     let totalCategory = 0
     let totalSaved = 0
     for( let item of haji){
@@ -28,22 +35,30 @@ function Progress() {
     // console.log(haji.category_budget);
     return (
     
-
-        <div>
+      
+        <div className='progress'>
 
             Progress <br></br>
-        <progress max={totalCategory} value={totalSaved}/>
+        <progress className='progress-bar' max={totalCategory} value={totalSaved}/>
 
-        <Typography >
-        Saving: {formatter.format(totalSaved)}  Goal: {formatter.format(totalCategory)}
+        <Typography className='progress-text' >
+        <b> Saving:</b>  {formatter.format(totalSaved)} 
+        <br></br>
+        <b> Goal: </b>{formatter.format(totalCategory)}
             <br></br>
-            {formatPercentage(totalSaved / totalCategory )} GOAL REACHED
+           <b> {formatPercentage(totalSaved / totalCategory )} OF GOAL REACHED</b>
        </Typography>
+       <br></br>
+         <Button sx={{ color:'white', backgroundColor: 'green',   '&:hover': {
+      backgroundColor: '#008183',
+    } }} 
+         onClick={goBudget}>Budget</Button>
+        </div> 
 
-             
       
      
-   </div> )
+     
+   )
 }
 
 export default Progress

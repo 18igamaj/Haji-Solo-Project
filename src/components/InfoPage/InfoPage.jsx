@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import './InfoPage.jsx'
 import { useHistory } from 'react-router-dom';
+import {Button} from '@mui/material'
 // This is one of our simplest components
 // It doesn't have local state
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -113,11 +114,12 @@ function InfoPage() {
         />
       </ListItem>
     </List>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
     <Button sx={{ color:'white', backgroundColor: 'green',   '&:hover': {
       backgroundColor: '#008183',
     } }} 
-         onClick={goBudget}>Budget</Button>
-        
+         onClick={goBudget}> Create Budget</Button>
+     </div>   
     </div>
   );
   

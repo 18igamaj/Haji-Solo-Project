@@ -15,7 +15,7 @@ import {Button} from '@mui/material'
 
 
 function InfoPage() {
-
+const history = useHistory()
   const goBudget = () => {
     history.push('/budget')
 }

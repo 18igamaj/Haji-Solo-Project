@@ -115,6 +115,11 @@ function InfoPage() {
         />
       </ListItem>
     </List>
+    <Button sx={{ color:'white', backgroundColor: 'green',   '&:hover': {
+      backgroundColor: '#008183',
+    } }} 
+         onClick={goBudget}>Budget</Button>
+        
     </div>
   );
   

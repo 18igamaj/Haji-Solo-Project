@@ -35,7 +35,7 @@ function Progress() {
     // console.log(haji.category_budget);
     return (
     
-        <>
+      
         <div className='progress'>
 
             Progress <br></br>
@@ -48,10 +48,15 @@ function Progress() {
             <br></br>
            <b> {formatPercentage(totalSaved / totalCategory )} OF GOAL REACHED</b>
        </Typography>
+       <br></br>
+         <Button sx={{ color:'white', backgroundColor: 'green',   '&:hover': {
+      backgroundColor: '#008183',
+    } }} 
+         onClick={goBudget}>Budget</Button>
         </div> 
 
-        <Button className='progress-btn' onClick={goBudget}>Budget</Button>
-      </>
+      
+     
      
    )
 }

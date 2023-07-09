@@ -34,10 +34,12 @@ function Progress() {
             Progress <br></br>
         <progress className='progress-bar' max={totalCategory} value={totalSaved}/>
 
-        <Typography >
-        Saving: {formatter.format(totalSaved)}  Goal: {formatter.format(totalCategory)}
+        <Typography className='progress-text' >
+        Saving: {formatter.format(totalSaved)} 
+        <br></br>
+         Goal: {formatter.format(totalCategory)}
             <br></br>
-            {formatPercentage(totalSaved / totalCategory )} GOAL REACHED
+            {formatPercentage(totalSaved / totalCategory )} OF GOAL REACHED
        </Typography>
 
              

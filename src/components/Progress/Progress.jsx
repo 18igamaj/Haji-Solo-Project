@@ -38,7 +38,7 @@ function Progress() {
       
         <div className='progress'>
 
-            Progress <br></br>
+          <b style={{display: 'flex', justifyContent: 'center'}}>Progress <br></br></b>  
         <progress className='progress-bar' max={totalCategory} value={totalSaved}/>
 
         <Typography className='progress-text' >

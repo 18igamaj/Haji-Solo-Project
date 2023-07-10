@@ -44,10 +44,10 @@ function Nav() {
             <LogOutButton className="navLink" />
           </>
         )}
-
-        <Link className="navLink" to="/about">
+  {/* Not being used on final */}
+        {/* <Link className="navLink" to="/about">
           About
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

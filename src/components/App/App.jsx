@@ -22,8 +22,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HajiTable from '../HajiTable/HajiTable';
 import HajiForm from '../HajiForm/HajiForm'
 import Progress from '../Progress/Progress';
-import { ThemeProvider } from '@mui/material/styles';
-import {theme} from '../HelperFunctions'
 import './App.css';
 
 function App() {

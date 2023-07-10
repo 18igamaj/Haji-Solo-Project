@@ -8,8 +8,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET route code for to pull data from haji_database
   pool.query(`SELECT * FROM "hajj"
-  ORDER BY id;`)
-
+  WHERE user_id = $1
+  ORDER BY id;`, [req.user.id])
+  
   .then(result => {
     console.log('Whats coming from database?', result.rows)
     res.send(result.rows)
@@ -26,11 +27,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
   // This Post is specific to name and budget 
-  let sqlText = `INSERT INTO hajj ("name" ,"category_budget")
-  VALUES ($1, $2);`;
+  let sqlText = `INSERT INTO hajj ("name" ,"category_budget", "user_id")
+  VALUES ($1, $2, $3);`;
 
   
-  pool.query(sqlText, [req.body.name, req.body.category_budget])
+  pool.query(sqlText, [req.body.name, req.body.category_budget, req.user.id])
     // console.log('What is our req.body', dataToInsert)
     .then(result => {
       res.sendStatus(201)
